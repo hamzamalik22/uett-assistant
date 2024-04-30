@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django</title>
+    <title>Home</title>
 </head>
-
 <body>
-
+    <h1>All Departments with Semesters</h1>
     {% for department in departments %}
-    <h2>{{ department.name }}</h2>
-    {% for semester in department.semester_set.all %}
-    <h3>{{ semester.name }}</h3>
-    <ul>
-        {% for subject in semester.subjects.all %}
-        <li>{{ subject.name }} - {{ subject.credit_hour }} credit hours</li>
-        {% endfor %}
-    </ul>
+        <h2>{{ department.name }}</h2>
+        <ul>
+            {% for semester in semesters %}
+                {% if semester.department == department %}
+                    <li><a target='blank' href="{% url 'semester' semester.id %}">{{ semester.name }} : {{ semester.department }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
     {% endfor %}
-    {% endfor %}
-
 </body>
-
 </html>

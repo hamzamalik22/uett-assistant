@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ department.name }} - {{ semester.name }}</title>
+</head>
+<body>
+    <h1>{{ department.name }} - {{ semester.name }}</h1>
+    {% if subjects %}
+        <ul>
+            {% for subject in subjects %}
+                <li>{{ subject.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No subjects found for {{ semester.name }} in {{ department.name }}</p>
+    {% endif %}
+</body>
+</html>

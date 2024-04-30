@@ -1,33 +1,128 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import *
+from .forms import GradeForm
 
-# Create your views here.
-# def home(request):
-#     deps = Department.objects.all()
-#     context = {'deps':deps}
-#     return render(request,'uettApp/home.html',context)
+def main(request):
+    departments = Department.objects.all()
+    semesters = Semester.objects.all()  # Get all semesters
+    context = {'departments': departments, 'semesters': semesters}
+    return render(request, 'uettApp/main.html', context)
 
 
 def home(request):
     departments = Department.objects.all()
-    context = {'departments': departments}
+    semesters = Semester.objects.all()  # Get all semesters
+    context = {'departments': departments, 'semesters': semesters}
     return render(request, 'uettApp/home.html', context)
 
 
-# def home(request):
-#     # Retrieve all departments
-#     departments = Department.objects.all()
-    
-#     # Create an empty dictionary to store departments and their associated semesters
-#     department_semesters = {}
+def semester(request, department_id, semester_id):
+    department = get_object_or_404(Department, id=department_id)
+    semester = get_object_or_404(Semester, id=semester_id, department=department)
+    subjects = semester.subjects.all()
 
-#     # Loop through each department
-#     for department in departments:
-#         # Retrieve all semesters related to the current department
-#         semesters = department.semester_set.all()
-#         # Store the department and its semesters in the dictionary
-#         department_semesters[department] = semesters
+    if request.method == 'POST':
+        grade_form = GradeForm(request.POST, subjects=subjects)
+        if grade_form.is_valid():
+            total_grade_points = 0
+            total_credit_hours = 0
 
-#     # Pass the dictionary to the template context
-#     context = {'department_semesters': department_semesters}
-#     return render(request, 'uettApp/home.html', context)
+            for subject in subjects:
+                grade = grade_form.cleaned_data.get(f'grade_{subject.id}')
+                credit_hours = subject.credit_hour
+                print(f"Subject: {subject.name}, Grade: {grade}, Credit Hours: {credit_hours}")
+
+                if grade == 'A':
+                    grade_points = 4.0
+                elif grade == 'A-':
+                    grade_points = 3.7
+                elif grade == 'B+':
+                    grade_points = 3.3
+                elif grade == 'B':
+                    grade_points = 3.0
+                elif grade == 'B-':
+                    grade_points = 2.7
+                elif grade == 'C+':
+                    grade_points = 2.3
+                elif grade == 'C':
+                    grade_points = 2.0
+                elif grade == 'C-':
+                    grade_points = 1.7
+                elif grade == 'D':
+                    grade_points = 1.0
+                else:
+                    grade_points = 0.0  
+
+                total_grade_points += grade_points * credit_hours
+                total_credit_hours += credit_hours
+
+            if total_credit_hours != 0:
+                gpa = total_grade_points / total_credit_hours
+                gpa = round(gpa, 2)
+            else:
+                gpa = None 
+
+            context = {'department': department, 'semester': semester, 'subjects': subjects, 'grade_form': grade_form, 'gpa': gpa}
+            return render(request, 'uettApp/semester.html', context)
+    else:
+        grade_form = GradeForm(subjects=subjects)
+
+    context = {'department': department, 'semester': semester, 'subjects': subjects, 'grade_form': grade_form}
+    return render(request, 'uettApp/semester.html', context)
+
+
+
+def calculator(request, department_id, semester_id):
+    department = get_object_or_404(Department, id=department_id)
+    semester = get_object_or_404(Semester, id=semester_id, department=department)
+    subjects = semester.subjects.all()
+
+    if request.method == 'POST':
+        grade_form = GradeForm(request.POST, subjects=subjects)
+        if grade_form.is_valid():
+            total_grade_points = 0
+            total_credit_hours = 0
+
+            for subject in subjects:
+                grade = grade_form.cleaned_data.get(f'grade_{subject.id}')
+                credit_hours = subject.credit_hour
+                print(f"Subject: {subject.name}, Grade: {grade}, Credit Hours: {credit_hours}")
+
+                if grade == 'A':
+                    grade_points = 4.0
+                elif grade == 'A-':
+                    grade_points = 3.7
+                elif grade == 'B+':
+                    grade_points = 3.3
+                elif grade == 'B':
+                    grade_points = 3.0
+                elif grade == 'B-':
+                    grade_points = 2.7
+                elif grade == 'C+':
+                    grade_points = 2.3
+                elif grade == 'C':
+                    grade_points = 2.0
+                elif grade == 'C-':
+                    grade_points = 1.7
+                elif grade == 'D':
+                    grade_points = 1.0
+                else:
+                    grade_points = 0.0  
+
+                total_grade_points += grade_points * credit_hours
+                total_credit_hours += credit_hours
+
+            if total_credit_hours != 0:
+                gpa = total_grade_points / total_credit_hours
+                gpa = "{:.3f}".format(gpa)
+                gpa = gpa[:4]
+            else:
+                gpa = None 
+
+            context = {'department': department, 'semester': semester, 'subjects': subjects, 'grade_form': grade_form, 'gpa': gpa}
+            return render(request, 'uettApp/calculator.html', context)
+    else:
+        grade_form = GradeForm(subjects=subjects)
+
+    context = {'department': department, 'semester': semester, 'subjects': subjects, 'grade_form': grade_form}
+    return render(request, 'uettApp/calculator.html', context)
