@@ -4,7 +4,6 @@ let root =  document.documentElement;
 
 
 darkmodeicon.addEventListener('click',()=>{
-    console.log('ddddddddddddddd');
     root.style.setProperty("--bgcolor", "#151515");
     root.style.setProperty("--primaryColor", "transparent");
     root.style.setProperty("--primaryFooter", "#252525");

@@ -3,23 +3,9 @@
 
 
 {% block content %}
-    <div id="allHeader">
-        <header id="mainHeader">
-            <div id="headercontainer">
-                <a href="/" class="mainLogo">UETT GPA</a>
-                <div class="darkmodeicon">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
-                        <path id="darkModeIconPath"
-                            d="M240-383.922q42.615 0 77.999 23.615 35.385 23.616 53.461 63.231l13.616 33.154H422q33.307 0 57.614 24.808 24.308 24.807 24.308 59.114 0 35.307-24.615 59.114Q454.692-97.078 420-97.078H240q-59.692 0-101.307-41.615T97.078-240q0-59.692 41.615-101.807T240-383.922ZM433.306-820.69q-10.076 96.692 19.347 188.153 29.423 91.461 99.115 160.153 68.692 69.693 160.154 98.923 91.461 29.231 188.768 19.155-30 134.076-136.269 217.998-106.268 83.922-243.652 82.306-10.23 0-19.653-.5-9.423-.5-19.039-1.5 36.692-15.692 59.461-49.114 22.769-33.423 22.769-74.884 0-58.538-40.231-100.038t-97.154-43.653q-25.307-54.616-75.576-87.616-50.269-33-111.346-33-28.23 0-55.038 8.385-26.807 8.384-49.961 24.538-1-8.154-1-15.116v-15.115q-1-137.384 82.423-242.729Q299.846-789.69 433.306-820.69Z" />
-                    </svg>
-                </div>
-            </div>
-            <script src="{% static 'js/themeController.js' %}"></script>
-        </header>
-        <div class="credits">
-            Version 3.1 C&nbsp;-&nbsp; <a href="changelog.html">changelogs</a>
-        </div>
-    </div>
+
+    {% include "gpa_nav.html" %}
+
     <main style="padding:10px">
         <div class="content">
            <div class="welcometext">
@@ -36,14 +22,14 @@
                 <script src="home.js"></script>
                 <div class="button-group">
                     <div class="first-row">
-                    {% for semester in semesters|slice:":6" %}
+                    {% for semester in semesters|slice:":4" %}
                     {% if semester.department == department %}
                         <button class="sem1" onclick="window.location.href ='{% url 'calculator' department.id semester.id %}'">{{ semester.name }}</button>
                     {% endif %}
                     {% endfor %}
                     </div>
                     <div class="first-row">
-                    {% for semester in semesters|slice:"6:10" %}
+                    {% for semester in semesters|slice:"4:8" %}
                     {% if semester.department == department %}
                         <button class="sem1" onclick="window.location.href ='{% url 'calculator' department.id semester.id %}'">{{ semester.name }}</button>
                     {% endif %}
@@ -57,13 +43,6 @@
         </div>
     </main>
 
-    <footer>
-        <p id="footernote">Made with &#10084 by Hamza</p>
-        <p class="footernote1">Student at UET Taxila</p>
-        <p class="footernote1">Department of Computer Science</p>
-        <div class="linkcontainer">
-            <a href="https://linkedin.com/in/hamzamalik22">Linkedin</a>
-        </div>
-    </footer>
+    {% include "footer.html" %}
 
 {% endblock content %}
