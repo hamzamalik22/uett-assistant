@@ -1,29 +1,8 @@
+{% extends "gpa_base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.jpg' %}">
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-    <title>UETT GPA</title>
-</head>
-  
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-RSLTHGS9P4"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-RSLTHGS9P4");
-  </script>
 
-  <body>
+{% block content %}
     <div id="allHeader">
       <header id="mainHeader">
         <div id="headercontainer">
@@ -42,7 +21,6 @@
             </svg>
           </div>
         </div>
-        <script src="{% static 'themeController.js' %}"></script>
       </header>
       <div class="credits">
         Version 3.1 C&nbsp;-&nbsp; <a href="changelog.html">changelogs</a>
@@ -55,7 +33,7 @@
           <span class="branchName">{{ department.name }}</span>
         </div>
         <form id="segmentContainer" method="post">
-            {% csrf_token %}
+          {% csrf_token %}
           <!-- SUBJECTS -->
           {% for field in grade_form %}
           <div class="inputContainer">
@@ -64,7 +42,7 @@
             </div>
             <div class="secondRow">
               <span class="CourseCode">MTL1025: </span>
-                {{field}}
+              {{field}}
             </div>
           </div>
           {% endfor %}
@@ -94,16 +72,14 @@
       </div>
     </main>
 
-    <footer>
-      <p id="footernote">Made with &#10084; by Shivam</p>
-      <p class="footernote1">Student at Shri Mata Vaishno Devi University</p>
-      <p class="footernote1">Department of CSE</p>
-      <div class="linkcontainer">
-        <a href="https://www.instagram.com/z1_shivam/">instagram</a>
-      </div>
-    </footer>
 
-    <script src="/calculationCenter/CSE/CSE_sem1.js"></script>
-    <script src="/sitewideJavascripts/toggleButton.js"></script>
-  </body>
-</html>
+    <footer>
+      <p id="footernote">Made with &#10084 by Hamza</p>
+      <p class="footernote1">Student at UET Taxila</p>
+      <p class="footernote1">Department of Computer Science</p>
+      <div class="linkcontainer">
+          <a href="https://linkedin.com/in/hamzamalik22">Linkedin</a>
+      </div>
+  </footer>
+
+  {% endblock content %}

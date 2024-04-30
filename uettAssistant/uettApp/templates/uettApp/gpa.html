@@ -1,24 +1,8 @@
+{% extends "gpa_base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="{% static 'img/uettaxila.png' %}">
-    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-    <title>UETT GPA</title>
-</head>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSLTHGS9P4"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-RSLTHGS9P4');
-</script>
-
-<body>
+{% block content %}
     <div id="allHeader">
         <header id="mainHeader">
             <div id="headercontainer">
@@ -73,8 +57,6 @@
         </div>
     </main>
 
-    <script src="{% static 'js/toggleButton.js' %}"></script>
-
     <footer>
         <p id="footernote">Made with &#10084 by Hamza</p>
         <p class="footernote1">Student at UET Taxila</p>
@@ -83,6 +65,5 @@
             <a href="https://linkedin.com/in/hamzamalik22">Linkedin</a>
         </div>
     </footer>
-</body>
 
-</html>
+{% endblock content %}

@@ -1,3 +1,6 @@
 # Virtual Environment
 uettAssistant/myvir 
 
+# Database
+uettAssistant/db.sqlite3
+
