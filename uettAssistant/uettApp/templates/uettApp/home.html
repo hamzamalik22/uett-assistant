@@ -6,6 +6,7 @@
     <title>Home</title>
 </head>
 <body>
+    <h1><a target='blank' href="{% url 'gpa' %}">GPA PAGE</a></h1>
     <h1>All Departments with Semesters</h1>
     {% for department in departments %}
         <h2>{{ department.name }}</h2>

@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@200;300;400;500;600&family=Open+Sans:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+:root {
+    --bgcolor: #fffff0;
+    --primaryColor: #c9222a;
+    --primaryFooter: #041c32;
+    --headerElementColor: #fffff0;
+    --linkColor: #cdabff;
+    --h3color: #555;
+    --h1color: #000;
+    --coursecode: #c9222a;
+    --creditcolor: #041c32;
+    --placeholder: #c9222a71;
+    --topborder: #c9222a;
+    --inputColor: #ccc;
+    --cgpacalc: #fffff0;
+    --togglebg: #ccc;
+    --upfeature: #7fffd4;
+    --upfeatureshadow: #04422e74;
+    --upfeatureh3: #04422e;
+    --homeButtonBg: #fffff0;
+    --homeButtonBorder: #c9222a;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+svg{
+    fill: var(--headerElementColor);
+    width: 31px;
+    height: 31px;
+    
+}
+
+.darkmodeicon{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+#allHeader {
+    position: sticky;
+    top: 0;
+    /* backdrop-filter: blur(10px); */
+    z-index: 100
+}
+
+body {
+    background-color: var(--bgcolor);
+    
+    -webkit-tap-highlight-color: transparent;
+}
+
+.content{
+    width: 100%;
+}
+
+#segmentContainer img {
+    width: 170px;
+    opacity: 90%;
+    z-index: -1
+}
+
+h1 {
+    
+    font-family: 'Handjet', cursive;
+    font-weight: 300;
+    font-size: 35px;
+    color: var(--h1color)
+}
+
+header {
+    height: 60px;
+    background-color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.heading {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    justify-content: space-between
+}
+
+.branchName {
+    color: var(--topborder);
+    font-size: 20px;
+    font-family: 'roboto';
+    font-weight: 500;
+    
+}
+
+.mainLogo {
+    font-family: 'Handjet', cursive;
+    text-decoration: none;
+    color: var(--headerElementColor);
+    font-size: 2rem;
+    font-weight: 500
+}
+
+.credits {
+    display: flex;
+    align-items: center;
+    height: 23px;
+    background-color: var(--creditcolor);
+    justify-content: center;
+    font-family: 'roboto';
+    color: #cdcdcd;
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+}
+
+.changelogbox {
+    padding: 10px
+}
+
+.changeLogList {
+    font-family: 'roboto';
+    color: var(--h3color);
+    font-size: 16px;
+    max-width: 700px;
+    line-height: 150%;
+}
+
+main {
+    padding: 0 15px;
+    padding-top: 15px;
+    height: 100%;
+    font-family: 'roboto'
+}
+
+h3 {
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: var(--h3color)
+}
+
+#segmentContainer {
+    padding-top: 5px;
+    border-top: var(--topborder) 2px solid;
+    border-width: 100%
+}
+
+.inputContainer {
+    padding-top: 7px
+}
+
+.firstRow {
+    padding-top: 5px
+}
+
+.secondRow {
+    padding: 5px 0;
+    font-size: 16px
+}
+
+.CourseCode {
+    
+    color: var(--coursecode);
+    font-family: 'open sans';
+    font-weight: 600
+}
+
+input[type="number"] {
+    border: 0;
+    border-bottom: 2px solid var(--inputColor);
+    outline: 0;
+    transition: border-bottom-color .3s ease;
+    font-family: 'roboto';
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 0;
+    background-color: transparent;
+    width: 70px;
+    height: 25px;
+    padding-left: 15px;
+    margin-left: 10px;
+    
+    color: var(--h3color);
+}
+
+.credits a {
+    color: var(--linkColor);
+    text-decoration: none
+}
+
+input[type="number"]:focus {
+    border-bottom-color: var(--h1color)
+}
+
+::placeholder {
+    
+    color: var(--placeholder)
+}
+
+.buttonContainer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 5px;
+    background-color: transparent
+}
+
+button {
+    height: 40px;
+    background-color: transparent;
+    color: var(--topborder);
+    border-radius: 10px;
+    border: 2px solid var(--topborder);
+    padding: 0 20px;
+    font-family: 'open sans';
+    font-weight: 500;
+    cursor: pointer;
+
+}
+
+button:hover {
+    color: var(--cgpacalc);
+    background-color: var(--topborder)
+}
+
+
+#sgpaContainer {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--topborder);
+    font: 'open sans';
+    font-weight: 500;
+    font-size: 18px;
+    user-select: text
+}
+
+#sgpaContainer p {
+    padding-top: 10px
+}
+
+footer {
+    height: 150px;
+    background-color: var(--primaryFooter);
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#footernote {
+    padding: 15px;
+    align-self: center
+}
+
+.footernote1 {
+    color: #cdcdcd;
+    align-self: center
+}
+
+.linkcontainer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--linkColor)
+}
+
+.upcomingFeatures {
+    
+    background-color: var(--upfeature);
+    border: 2px solid var(--primaryFooter);
+    border-radius: 10px;
+    box-shadow: 6px 6px 0 var(--upfeatureshadow);
+    margin-bottom: 20px;
+    padding: 10px;
+    line-height: 150%;
+
+}
+
+.upcomingFeatures h3 {
+    font-family: 'Handjet', cursive;
+    color: var(--upfeatureh3);
+    font-weight: 400;
+    font-size: 25px;
+    margin-top: 5px;
+    
+
+}
+
+.upcomingFeatures p {
+    
+    color: var(--h1color);
+    margin-top: 5px;
+    
+
+}
+
+.ucOnPage {
+    margin-top: 20px
+}
+
+.ucOnPage a{
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'roboto';
+    color: var(--coursecode);
+}
+
+.toggle-input {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.toggle-btn {
+
+    align-self: center;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 38px;
+	height: 21px;
+	background: var(--togglebg);
+	display: block;
+	border-radius: 25px;
+	position: relative;
+}
+
+.toggle-btn:after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 15px;
+	height: 15px;
+	background: #ffffff;
+	border-radius: 23px;
+	transition: 0.3s ease;
+}
+
+.toggle-input:checked + label {
+	background: var(--topborder);
+}
+
+.toggle-input:checked + label:after {
+	left: calc(100% - 3px);
+	transform: translateX(-100%);
+}
+
+/* .toggle-btn:active:after {
+	width: 35px;
+} */
+
+.hidden-content {
+    display: none;
+    padding-top: 15px
+}
+
+.cgpaAsk {
+    display: flex
+}
+
+.toggle-container {
+    display: flex
+}
+
+.toggle-container h3 {
+    padding-left: 10px
+}
+
+.cgpaCalc {
+    margin-top: 20px;
+    padding-left: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 9px var(--primaryColor);
+    background-color: var(--cgpacalc);
+    
+}
+
+.material-symbols-outlined {
+    color: var(--headerElementColor)
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 200, 'opsz' 48
+}
+
+#headercontainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+#headercontainer span {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+
+.branch {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 2px solid var(--placeholder);
+    border-radius: 7px;
+    height: auto;
+    overflow: hidden;
+    
+    margin-bottom: 15px;
+}
+
+.button-group {
+    
+    width: 100%;
+
+}
+
+.welcometext{
+    height: 130px;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.welcometext h2{
+    font-size: 35px;
+    color: var(--h3color);
+    letter-spacing: 3px;
+    font-family: 'handjet';
+    font-weight: 500;
+    padding-bottom: 7px;
+    text-align: center;
+}
+
+.welcometext p{
+    color: var(--h1color);
+    font-family: 'open sans';
+    text-align: center;
+}
+
+.button-group button {
+    height: 40px;
+    padding: 0 0;
+    width: 100%;
+    margin: 5px;
+    border: 2px solid var(--homeButtonBorder);
+    border-radius: 7px ;
+    font-size: 16px;
+    overflow: hidden;
+    background-color: var(--homeButtonBg);
+}
+
+.button-group button:hover {
+    color: var(--cgpacalc);
+    background-color: var(--topborder);
+}
+
+
+.button-group button:disabled{
+    border: 2px solid #55555560;
+    color: #55555590;
+    background-color: transparent;
+}
+
+.branch-name{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 9px;
+    
+}
+
+.branch-name span{
+    position: relative;
+    float: right;
+    padding-right: 11px;
+    padding-top: 15px;
+    font-size: 17px;
+    color: var(--h3color);
+    font-weight: 400;
+    
+}
+
+.branch-name h2 {
+    color: var(--h3color);
+    font-family: 'handjet';
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 11px;
+    
+}
+
+.first-row {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    
+}
+
+.second-row {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+@media(min-width:700px) {
+    #decoration1 {
+        right: 10px
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+    #headercontainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 720px;
+        margin: auto
+    }
+
+    .upcomingFeatures {
+        max-width: 700px
+    }
+
+    .content{
+        max-width: 720px;
+    }
+}
