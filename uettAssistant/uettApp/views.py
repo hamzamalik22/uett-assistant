@@ -2,11 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import GradeForm
 
-def main(request):
+def gpa(request):
     departments = Department.objects.all()
     semesters = Semester.objects.all()  # Get all semesters
     context = {'departments': departments, 'semesters': semesters}
-    return render(request, 'uettApp/main.html', context)
+    return render(request, 'uettApp/gpa.html', context)
 
 
 def home(request):
