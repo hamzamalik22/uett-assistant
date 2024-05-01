@@ -1,57 +1,80 @@
-{% extends "gpa_base.html" %}
-{% load static %}
+{% extends "gpa_base.html" %} {% load static %} {% block content %}
 
+<style>
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    cursor: pointer;
+    outline-color: red;
+  }
 
-{% block content %}
+  select:hover {
+    border-color: var(--topborder);
+  }
+
+  select option {
+    background-color: #fff;
+    color: #333;
+  }
+
+  select option:hover {
+    background-color: #f0f0f0;
+  }
+</style>
 
 {% include "gpa_nav.html" %}
-
-    <main>
-      <div class="content">
-        <div class="heading">
-          <h1>{{ semester.name }}</h1>
-          <span class="branchName">{{ department.name }}</span>
+<main>
+  <div class="content">
+    <div class="heading">
+      <h1>{{ semester.name }}</h1>
+      <span class="branchName">{{ department.name }}</span>
+    </div>
+    <form id="segmentContainer" method="post">
+      {% csrf_token %}
+      <!-- SUBJECTS -->
+      {% for field in grade_form %}
+      <div class="inputContainer">
+        <div class="firstRow">
+          <h3>{{field.label}}</h3>
         </div>
-        <form id="segmentContainer" method="post">
-          {% csrf_token %}
-          <!-- SUBJECTS -->
-          {% for field in grade_form %}
-          <div class="inputContainer">
-            <div class="firstRow">
-              <h3>{{field.label}}</h3>
-            </div>
-            <div class="secondRow">
-              <span class="CourseCode">MTL1025: </span>
-              {{field}}
-            </div>
-          </div>
-          {% endfor %}
-
-          <!-- Subject End Here -->
-
-          <div class="buttonContainer">
-            <button type="submit">Submit Grades</button>
-          </div>
-        </form>
-        <div id="sgpaContainer">
-          <p id="displaySGPA">Your Result will display here.</p>
-          <p id="displayCGPA">GPA: {{ gpa }}</p>
-        </div>
-
-        <div class="upcomingFeatures ucOnPage">
-          <h3>Important!</h3>
-          <!-- <p>This Website now use cookies to improve your experiences.</p> -->
-          <p>
-            REQUEST CGPA calc. for your branch
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdGKQc3maNgVr1RfzcLzYt5de7eEs_fJ207-hQyzNn3Fl64VQ/viewform?usp=sf_link"
-              >here.</a
-            >
-          </p>
-        </div>
+        <div class="secondRow">{{field}}</div>
       </div>
-    </main>
+      {% endfor %}
 
-    {% include "footer.html" %}
+      <!-- Subject End Here -->
 
-  {% endblock content %}
+      <div class="buttonContainer">
+        <button type="submit">Calculate</button>
+      </div>
+    </form>
+    <div id="sgpaContainer">
+      {% comment %} <p id="displaySGPA">Your Result will display here.</p> {% endcomment %}
+      {% if gpa %}
+      <h2 id="displayCGPA">GPA : {{ gpa }}</h2>
+      {% else %}
+      <h2 id="displayCGPA">GPA : 🙈</h2>
+
+      {% endif %}
+    </div>
+
+    <div class="upcomingFeatures ucOnPage">
+      <h3>Important!</h3>
+      <!-- <p>This Website now use cookies to improve your experiences.</p> -->
+      <p>
+        REQUEST CGPA calc. for your branch
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdGKQc3maNgVr1RfzcLzYt5de7eEs_fJ207-hQyzNn3Fl64VQ/viewform?usp=sf_link"
+          >here.</a
+        >
+      </p>
+    </div>
+  </div>
+</main>
+
+
+{% include "gpa_footer.html" %} {% endblock content %}
+

@@ -19,7 +19,6 @@
                 <div class="branch-name">
                     <h2>{{ department.name }}</h2>
                 </div>
-                <script src="home.js"></script>
                 <div class="button-group">
                     <div class="first-row">
                     {% for semester in semesters|slice:":4" %}
@@ -43,6 +42,6 @@
         </div>
     </main>
 
-    {% include "footer.html" %}
+    {% include "gpa_footer.html" %}
 
 {% endblock content %}

@@ -46,20 +46,20 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-svg{
+svg {
     fill: var(--headerElementColor);
     width: 31px;
     height: 31px;
-    
+
 }
 
-.darkmodeicon{
+.darkmodeicon {
     cursor: pointer;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 
@@ -72,11 +72,11 @@ svg{
 
 body {
     background-color: var(--bgcolor);
-    
+
     -webkit-tap-highlight-color: transparent;
 }
 
-.content{
+.content {
     width: 100%;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 h1 {
-    
+
     font-family: 'Handjet', cursive;
     font-weight: 300;
     font-size: 35px;
@@ -115,7 +115,7 @@ header {
     font-size: 20px;
     font-family: 'roboto';
     font-weight: 500;
-    
+
 }
 
 .mainLogo {
@@ -158,7 +158,7 @@ main {
 }
 
 h3 {
-    
+
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     color: var(--h3color)
@@ -184,7 +184,7 @@ h3 {
 }
 
 .CourseCode {
-    
+
     color: var(--coursecode);
     font-family: 'open sans';
     font-weight: 600
@@ -204,7 +204,7 @@ input[type="number"] {
     height: 25px;
     padding-left: 15px;
     margin-left: 10px;
-    
+
     color: var(--h3color);
 }
 
@@ -218,7 +218,7 @@ input[type="number"]:focus {
 }
 
 ::placeholder {
-    
+
     color: var(--placeholder)
 }
 
@@ -301,7 +301,7 @@ footer a {
 }
 
 .upcomingFeatures {
-    
+
     background-color: var(--upfeature);
     border: 2px solid var(--primaryFooter);
     border-radius: 10px;
@@ -318,15 +318,15 @@ footer a {
     font-weight: 400;
     font-size: 25px;
     margin-top: 5px;
-    
+
 
 }
 
 .upcomingFeatures p {
-    
+
     color: var(--h1color);
     margin-top: 5px;
-    
+
 
 }
 
@@ -334,7 +334,7 @@ footer a {
     margin-top: 20px
 }
 
-.ucOnPage a{
+.ucOnPage a {
     font-weight: bold;
     text-decoration: none;
     font-family: 'roboto';
@@ -342,43 +342,43 @@ footer a {
 }
 
 .toggle-input {
-	height: 0;
-	width: 0;
-	visibility: hidden;
+    height: 0;
+    width: 0;
+    visibility: hidden;
 }
 
 .toggle-btn {
 
     align-self: center;
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 38px;
-	height: 21px;
-	background: var(--togglebg);
-	display: block;
-	border-radius: 25px;
-	position: relative;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 38px;
+    height: 21px;
+    background: var(--togglebg);
+    display: block;
+    border-radius: 25px;
+    position: relative;
 }
 
 .toggle-btn:after {
-	content: "";
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 15px;
-	height: 15px;
-	background: #ffffff;
-	border-radius: 23px;
-	transition: 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 23px;
+    transition: 0.3s ease;
 }
 
-.toggle-input:checked + label {
-	background: var(--topborder);
+.toggle-input:checked+label {
+    background: var(--topborder);
 }
 
-.toggle-input:checked + label:after {
-	left: calc(100% - 3px);
-	transform: translateX(-100%);
+.toggle-input:checked+label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
 }
 
 /* .toggle-btn:active:after {
@@ -410,7 +410,7 @@ footer a {
     border-radius: 10px;
     box-shadow: 0 0 9px var(--primaryColor);
     background-color: var(--cgpacalc);
-    
+
 }
 
 .material-symbols-outlined {
@@ -432,7 +432,7 @@ footer a {
     font-size: 30px;
     cursor: pointer;
     user-select: none;
-    
+
 }
 
 
@@ -446,17 +446,17 @@ footer a {
     border-radius: 7px;
     height: auto;
     overflow: hidden;
-    
+
     margin-bottom: 15px;
 }
 
 .button-group {
-    
+
     width: 100%;
 
 }
 
-.welcometext{
+.welcometext {
     height: 130px;
     display: flex;
     align-items: center;
@@ -465,7 +465,8 @@ footer a {
     justify-content: center;
     padding-bottom: 10px;
 }
-.welcometext h2{
+
+.welcometext h2 {
     font-size: 35px;
     color: var(--h3color);
     letter-spacing: 3px;
@@ -475,7 +476,7 @@ footer a {
     text-align: center;
 }
 
-.welcometext p{
+.welcometext p {
     color: var(--h1color);
     font-family: 'open sans';
     text-align: center;
@@ -487,7 +488,7 @@ footer a {
     width: 100%;
     margin: 5px;
     border: 2px solid var(--homeButtonBorder);
-    border-radius: 7px ;
+    border-radius: 7px;
     font-size: 16px;
     overflow: hidden;
     background-color: var(--homeButtonBg);
@@ -499,21 +500,21 @@ footer a {
 }
 
 
-.button-group button:disabled{
+.button-group button:disabled {
     border: 2px solid #55555560;
     color: #55555590;
     background-color: transparent;
 }
 
-.branch-name{
+.branch-name {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding-left: 9px;
-    
+
 }
 
-.branch-name span{
+.branch-name span {
     position: relative;
     float: right;
     padding-right: 11px;
@@ -521,7 +522,7 @@ footer a {
     font-size: 17px;
     color: var(--h3color);
     font-weight: 400;
-    
+
 }
 
 .branch-name h2 {
@@ -531,20 +532,19 @@ footer a {
     font-weight: 500;
     margin-top: 5px;
     margin-bottom: 11px;
-    
+
 }
 
 .first-row {
     display: flex;
-    /* justify-content: space-between; */
-    gap: 20px;
-    
+    gap: 10px;
+
 }
 
 .second-row {
     display: flex;
     justify-content: space-between;
-    
+
 }
 
 
@@ -558,6 +558,7 @@ footer a {
         flex-direction: column;
         align-items: center
     }
+
     #headercontainer {
         width: 100%;
         display: flex;
@@ -571,7 +572,7 @@ footer a {
         max-width: 700px
     }
 
-    .content{
+    .content {
         max-width: 720px;
     }
 }
