@@ -52,14 +52,32 @@
       </div>
     </form>
     <div id="sgpaContainer">
-      {% comment %} <p id="displaySGPA">Your Result will display here.</p> {% endcomment %}
-      {% if gpa %}
-      <h2 id="displayCGPA">GPA : {{ gpa }}</h2>
+      {% if total_gpa %}
+      <h2 id="displayCGPA">GPA : {{ total_gpa }}</h2>
       {% else %}
       <h2 id="displayCGPA">GPA : 🙈</h2>
 
       {% endif %}
     </div>
+
+    {% if total_gpa %}
+    <h2>Total GPA: {{ total_gpa }}</h2>
+
+    <!-- Add a container for the total GPA chart -->
+    <div id="totalGPACanvasContainer">
+      <canvas id="totalGPAChart"></canvas>
+    </div>
+    {% endif %}
+
+    <!-- Conditional rendering of Subject GPAs heading -->
+    {% if subject_gpas %}
+    <h2>Subject GPAs</h2>
+
+    <!-- Add a container for the subject GPAs chart -->
+    <div id="subjectGPACanvasContainer">
+      <canvas id="subjectGPAChart"></canvas>
+    </div>
+    {% endif %}
 
     <div class="upcomingFeatures ucOnPage">
       <h3>Important!</h3>
@@ -74,7 +92,66 @@
     </div>
   </div>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script>
+   // Get total GPA from Django context
+  const totalGPA = {{ total_gpa|safe }};
+
+  // Get canvas element for total GPA chart
+  const totalGPACanvas = document.getElementById('totalGPAChart').getContext('2d');
+
+  // Create total GPA chart
+  const totalGPAChart = new Chart(totalGPACanvas, {
+    type: 'pie',
+    data: {
+      labels: ['Total GPA'],
+      datasets: [{
+        label: 'Total GPA',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        data: [totalGPA],
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false
+    }
+  });
+
+  // Get subject names and GPAs from Django context
+  const subjects = {{ subjects|safe }};
+  const subjectGPAs = {{ subject_gpas|safe }};
+
+  // Get canvas element for subject GPAs chart
+  const subjectGPACanvas = document.getElementById('subjectGPAChart').getContext('2d');
+
+  // Create subject GPAs chart
+  const subjectGPAChart = new Chart(subjectGPACanvas, {
+    type: 'bar',
+    data: {
+      labels: subjects,
+      datasets: [{
+        label: 'GPA',
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        data: subjectGPAs,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
 
 {% include "gpa_footer.html" %} {% endblock content %}
-
