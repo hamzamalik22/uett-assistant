@@ -1,0 +1,303 @@
+
+body {
+	margin:0;
+	padding:0;
+	background-color:#a2161d;
+}
+.content {
+	width:35%;
+	margin-top:7%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	position:relative;
+}
+.content h1 {
+	color:#34EFCA;
+	font-size:35px;
+	font-family: 'Oswald', sans-serif;
+}
+.content p {
+	font-size:20px;
+	color:white;
+	font-family: 'Lobster', cursive;
+	line-height:25px;
+}
+input[type="text"] {
+	padding:10px;
+	width:66%;
+	background-color:#a2161d;
+	border:2px solid white;
+	color:white;
+	margin-top:7%;
+	text-align:center;
+	outline:none;
+	font-size:20px;
+	border-radius:26px;
+	font-family: 'Oswald', sans-serif;
+}
+input[type="password"] {
+	padding:10px;
+	width:66%;
+	background-color:#a2161d;
+	border:2px solid white;
+	color:white;
+	margin-top:40px;
+	text-align:center;
+	border-radius:26px;
+	outline:none;
+	font-size:20px;
+	font-family: 'Oswald', sans-serif;
+}
+input[type="submit"] {
+	padding:10px;
+	background-color:#16a085;
+	width:150px;
+	border:none;
+	cursor:pointer;
+	color:white;
+	font-weight:bold;
+	font-size:20px;
+	top:107%;
+	left:35%;
+	font-family: 'Oswald', sans-serif;
+	position:absolute;
+	transition:all 0.5s ease-in-out;
+}
+input[type="submit"]:hover {
+	background-color:#a2161d;
+	color:white;
+	transition:all 0.5s ease-in-out;
+}
+a, a:active {
+	color:white;
+	text-decoration:none;
+}
+a:hover {
+	color:#a2161d;
+	text-decoration:none;
+	transition:all 0.5s ease-in-out;
+}
+.footer {
+	margin-top:11%;
+	text-align:center;
+}
+.footer p {
+	font-weight:bold;
+	color:white;
+	font-size:15px;
+	font-family: 'Oswald', sans-serif;
+	line-height:25px;
+}
+
+/*-- responsive-mediaquries --*/
+@media(max-width:1920px){
+.content {
+	margin-top:8%;
+}
+input[type="submit"] {
+	left:39%;
+}
+}
+
+@media(max-width:1680px){
+.content {
+	margin-top:9%;
+}
+input[type="submit"] {
+	left:37%;
+}
+}
+
+@media(max-width:1440px){
+input[type="submit"] {
+	left:35%;
+}
+}
+
+@media(max-width:1280px){
+.content {
+	width:40%;
+}
+input[type="submit"] {
+	left:35%;
+}
+}
+
+@media(max-width:1024px){
+.content {
+	width:50%;	
+}
+input[type="submit"] {
+	left:35.5%;
+}	
+.footer {
+	margin-top:13%;
+}
+}
+
+@media(max-width:800px){
+.content {
+	width:60%;
+}
+input[type="submit"] {
+	left:34%;
+}	
+}
+
+@media(max-width:768px){
+.content  {
+	width:70%;
+	margin-top:24%;
+}
+input[type="submit"] {
+	top:110%;
+	left:36%;
+}
+.footer {
+	margin-top:30%;
+}
+}
+
+@media(max-width:736px){
+.content {
+	width:80%;
+	margin-top:1%;
+}
+input[type="text"] {
+	margin-top:2%;
+}
+input[type="submit"] {
+    left: 37%;
+}
+.footer {
+	margin-top:15%;
+}
+}
+
+@media(max-width:667px){
+.content  {
+	margin-top:1%;
+	width:80%;
+}
+input[type="text"] {
+	margin-top:3%;	
+	width:70%;
+}
+input[type="password"] {
+	width:70%;
+}
+.footer {
+	margin-top:15%;
+}
+}
+
+@media(max-width:640px){
+input[type="submit"] {
+	width:40%;	
+}
+input[type="password"] {
+	width:80%;
+}
+input[type="text"] {
+	width:80%;
+}
+}
+
+@media(max-width:600px){
+input[type="submit"] {
+	left:31%;
+}
+.footer {
+	margin-top:19%;
+}
+}
+
+@media(max-width:568px){
+.content {
+	margin-top:1%;
+	width:75%;
+}
+.content p {
+	font-size:17px;
+}
+input[type="text"] {
+	margin-top:1%;
+}
+input[type="submit"] {
+	top:110%;
+	left:31%;
+}
+.footer {
+	margin-top:17%;
+}
+}
+
+@media(max-width:480px){
+.content {
+	width:75%;
+}
+}
+
+@media(max-width:414px){
+.content {
+	width:90%;
+	margin-top:17%;
+}
+.content p {
+	font-size:20px;
+	margin-top:10%;
+}
+input[type="text"] {
+	margin-top:9%;
+}
+.footer {
+	margin-top:42%;
+}
+.footer p {
+	font-size:16px;
+}
+}
+
+@media(max-width:384px){
+.content{
+	margin-top:10%;
+	}
+}
+
+@media(max-width:375px){
+.content {
+	width:90%;
+	margin-top:14%;
+}
+input[type="text"] {
+	margin-top:8%;
+}
+.footer {
+	margin-top:36%;
+}
+.footer p {
+	font-size:14px;
+}	
+}
+	
+@media(max-width:320px){
+.content {
+	width:95%;
+	margin-top:1%;
+}
+input[type="text"] {
+	width:80%;
+	margin-top:4%;
+}
+input[type="password"] {
+	width:80%;
+}
+input[type="submit"] {
+    left: 31%;
+}
+.content p {
+	font-size:17px;
+}
+}
+	

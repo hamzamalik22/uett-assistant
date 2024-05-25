@@ -1,0 +1,26 @@
+{% load static %}
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href='//fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'styles/login.css' %}">
+</head>
+<body>
+  <div class="content">
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+			<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+	<h1>LOGIN</h1>
+	<p>Login page for Staff members of Project <span>UET DOST</span></p>
+	<form method="post">
+		{% csrf_token %}
+	<input type="text" name="username" value="USERNAME" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'USERNAME';}">
+	<input type="password" name="password" value="PASSWORD" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'PASSWORD';}">
+	<input type="submit" value="SIGN IN">
+	<form>
+  </div>
+</body>
+</html>

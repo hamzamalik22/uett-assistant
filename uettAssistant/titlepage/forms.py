@@ -4,4 +4,4 @@ from .models import *
 class TitlePageForm(forms.ModelForm):
     class Meta:
         model = TitlePage
-        fields = ['title', 'instructor', 'course', 'reg_no', 'user' , 'date']
+        fields = ['department', 'title', 'topic', 'instructor', 'course', 'reg_no', 'name' , 'date', 'section']

@@ -183,13 +183,6 @@ h3 {
     font-size: 16px
 }
 
-.CourseCode {
-
-    color: var(--coursecode);
-    font-family: 'open sans';
-    font-weight: 600
-}
-
 input[type="number"] {
     border: 0;
     border-bottom: 2px solid var(--inputColor);
@@ -424,7 +417,7 @@ footer a {
 #headercontainer {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center
 }
 

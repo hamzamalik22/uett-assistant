@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'uettApp.apps.UettappConfig',
     'titlepage.apps.TitlepageConfig',
+    'staff.apps.StaffConfig',
 ]
 
 MIDDLEWARE = [

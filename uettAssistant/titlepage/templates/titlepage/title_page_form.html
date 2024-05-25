@@ -1,16 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title Page Form</title>
-</head>
-<body>
-    <h1>Title Page Form</h1>
+{% extends "gpa_base.html" %}
+{% load static %}
+{% block content %}
+<style>
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    outline-color: red;
+  }
+
+  input[type="text"]:hover {
+    border-color: var(--topborder);
+  }
+
+  input[type="text"]::placeholder {
+    color: #999;
+  }
+
+  label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+    padding: 7px 0px;    
+  }
+
+
+</style>
+{% include "gpa_nav.html" %}
+<main>
+  <div class="content">
+    <div class="heading">
+        <h1>Generate Your Title Page</h1>
+      </div>
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Generate PDF</button>
+      {% csrf_token %}
+
+      {{ form.as_p }}
+
+      <br>
+      <button type="submit">Generate PDF</button>
     </form>
-</body>
-</html>
+    <br>
+
+  </div>
+</main>
+{% endblock content %}

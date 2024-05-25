@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('uettApp.urls')),
     path('', include('titlepage.urls')),
+    path('', include('staff.urls')),
 ]
