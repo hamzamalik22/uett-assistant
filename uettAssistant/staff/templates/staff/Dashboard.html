@@ -1,1 +1,148 @@
-this is dashboard
+{% extends "gpa_base.html" %} {% load static %} {% block content %}
+  </head>
+  <body>
+    <style>
+        .bg-mynav {
+            background-color: #2c3e50;
+          }
+          
+          body {
+            font-size: 1.25rem;
+            background-color: #f6f8fa;
+          }
+          
+          td {
+              line-height: 3rem;
+          }
+          tr{
+            text-align: center;
+          }
+
+          a{
+            color : black;
+          }
+    </style>
+    
+    {% include "gpa_nav.html" %}
+
+    <br>
+
+    <div class="container">
+      <div class="d-flex bd-highlight mb-3">
+        <div class="me-auto p-2 bd-highlight"><h2>Departments</div>
+        <div class="p-2 bd-highlight">
+          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Nickname</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="mytable">
+            {% for dep in departments %}
+            <tr>
+              <th scope="col" colspan="1">{{forloop.counter}}</th>
+              <th scope="col" colspan="1">{{dep.name}}</th>
+              <th scope="col" colspan="1">{{dep.nickname}}</th>
+              <th scope="col" colspan="1"><a href="{% url 'depUpdate' dep.id %}"><i class="ri-edit-box-fill"></i></a></th>
+              <th scope="col" colspan="1"><a href="{% url 'depDelete' dep.id %}"><i class="ri-delete-bin-6-line"></i></a></i></th>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr>
+
+
+    <div class="container">
+        <div class="d-flex bd-highlight mb-3">
+          <div class="me-auto p-2 bd-highlight"><h2>Semester</div>
+          <div class="p-2 bd-highlight">
+            <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+          </div>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="mytable">
+              {% for sem in semesters %}
+              <tr>
+                <th scope="col" colspan="1">{{forloop.counter}}</th>
+                <th scope="col" colspan="1">{{sem.name}}</th>
+                <th scope="col" colspan="1">{{sem.department}}</th>
+                <th scope="col" colspan="1"><a href="{% url 'semUpdate' sem.id %}"><i class="ri-edit-box-fill"></i></a></th>
+                <th scope="col" colspan="1"><a href="{% url 'semDelete' sem.id %}"><i class="ri-delete-bin-6-line"></i></a></i></th>
+  
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    <hr>
+
+    <div class="container">
+        <div class="d-flex bd-highlight mb-3">
+          <div class="me-auto p-2 bd-highlight"><h2>Subjects</div>
+          <div class="p-2 bd-highlight">
+            <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+          </div>
+        </div>
+        
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Credit Hours</th>
+                <th scope="col">Department</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="mytable">
+              {% for sub in subjects %}
+              <tr>
+                <th scope="col" colspan="1">{{forloop.counter}}</th>
+                <th scope="col" colspan="1">{{sub.name}}</th>
+                <th scope="col" colspan="1">{{sub.credit_hour}}</th>
+                <th scope="col" colspan="1">{{sub.department.name}}</th>
+                <th scope="col" colspan="1"><a href="{% url 'subUpdate' sub.id %}"><i class="ri-edit-box-fill"></i></a></th>
+                <th scope="col" colspan="1"><a href="{% url 'subDelete' sub.id %}"><i class="ri-delete-bin-6-line"></i></a></i></th>
+  
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+   
+   
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+{% endblock content %}
