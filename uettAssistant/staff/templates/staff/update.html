@@ -10,11 +10,18 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background: linear-gradient(135deg, #f0f2f5 25%, #3498db 25%, #3498db 50%, #f0f2f5 50%, #f0f2f5 75%, #3498db 75%, #3498db 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
             background-color: #fff;
@@ -24,6 +31,11 @@
             max-width: 400px;
             width: 100%;
             text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
         h1 {
             font-size: 26px;
@@ -44,6 +56,7 @@
             margin-bottom: 8px;
         }
         input[type="text"],
+        input[type="number"],
         textarea {
             width: 100%;
             padding: 10px;
@@ -69,6 +82,30 @@
         .btn-primary:hover {
             background-color: #2980b9;
         }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            background-color: white;
+            background-image: none;
+            appearance: none;
+        }
+        select[multiple] {
+            height: auto;
+            min-height: 100px;
+            overflow-y: auto;
+        }
+        select[multiple] option {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+        }
+        
+        
     </style>
 </head>
 <body>

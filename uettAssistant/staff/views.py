@@ -27,7 +27,7 @@ def staff_login(request):
             login(request, user)
             return redirect('staff_panel')
         else:
-            messages.error(request, 'Usernamee or password incorrect.')
+            messages.error(request, 'Incorrect Password 😐')
 
     context = {'title': 'Staff Login'}
     return render(request, 'staff/login_page.html', context)

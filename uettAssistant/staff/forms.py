@@ -16,4 +16,4 @@ class SemForm(forms.ModelForm):
 class SubForm(forms.ModelForm):
     class Meta:
         model = Subject
-        fields = '__all__'
+        fields = ['name' , 'credit_hour', 'department']

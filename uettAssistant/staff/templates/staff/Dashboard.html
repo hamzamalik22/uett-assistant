@@ -1,4 +1,5 @@
 {% extends "gpa_base.html" %} {% load static %} {% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   </head>
   <body>
     <style>
@@ -21,9 +22,44 @@
           a{
             color : black;
           }
+
+          .user-info {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        .user-info span {
+            margin-right: 20px;
+            font-size: 1.25rem;
+            color: #333;
+        }
+        .btn-logout {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 2px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-logout:hover {
+            background-color: #c0392b;
+        }
+
+
     </style>
     
     {% include "gpa_nav.html" %}
+
+    <div class="user-info">
+      <span>Welcome, {{ user.username }}</span>
+      <form method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn-logout">Logout</button>
+      </form>
+  </div>
 
     <br>
 
