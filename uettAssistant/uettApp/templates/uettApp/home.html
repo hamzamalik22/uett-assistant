@@ -22,6 +22,101 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="{% static 'styles/test.css' %}">
 </head>
+<style>
+    .container {
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .content-section-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .developers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .developer {
+        flex: 1 1 300px;
+        max-width: 100%;
+    }
+
+    .card-container {
+        background-color: #231E39;
+        border-radius: 5px;
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+        color: #B3B8CD;
+        padding-top: 30px;
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    .pro {
+        color: #231E39;
+        background-color: #FEBB0B;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 3px 7px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    .round {
+        border: 1px solid #03BFCB;
+        border-radius: 50%;
+        padding: 7px;
+        width: 145px;
+    }
+
+    .buttons .primary {
+        background-color: #03BFCB;
+        border: 1px solid #03BFCB;
+        border-radius: 3px;
+        color: #231E39;
+        font-family: Montserrat, sans-serif;
+        font-weight: 500;
+        padding: 10px 25px;
+        cursor: pointer;
+    }
+
+    .skills {
+        background-color: #1F1A36;
+        text-align: left;
+        padding: 15px;
+        margin-top: 30px;
+    }
+
+    .skills ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .skills li {
+        border: 1px solid #2D2747;
+        border-radius: 2px;
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 7px 7px 0;
+        padding: 7px;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        .developers {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
 
 <body id="page-top">
     <!-- Navigation-->
@@ -214,166 +309,92 @@
     </section>
     <!-- Portfolio-->
     <section class="content-section" id="portfolio">
-        <div class="container px-4 px-lg-5">
+        <div class="container">
             <div class="content-section-heading text-center">
                 <h3 class="text-secondary mb-0">Portfolio</h3>
                 <h2 class="mb-5">Developers</h2>
             </div>
 
-            
-        <section class="developers" style="display: flex;gap: 20px;">
-            <!-- 1 -->
-            <section class="developer">
-                <div class="card-container"
-                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
-                    <span class="pro"
-                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
-                    <img class="round" width="145px" src="{% static 'img/hamza.jpg' %}" alt="user"
-                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
-                    <h3 style="margin: 10px 0;">Hamza Malik</h3>
-                    <h6 style="margin: 5px 0; text-transform: uppercase;">Jhelum</h6>
-                    <p style="font-size: 14px; line-height: 21px;">Python Programmer and <br /> Back-end
-                        developer</p>
-                    <div class="buttons">
-                        <button class="primary" 
-                        style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;" 
-                        onclick="window.location.href='https://www.linkedin.com/in/hamzamalik22/' ">
-                        LinkedIn
-                    </button>
+            <section class="developers">
+                <!-- 1 -->
+                <section class="developer">
+                    <div class="card-container">
+                        <span class="pro">PRO</span>
+                        <img class="round" src="{% static 'img/hamza.jpg' %}" alt="user">
+                        <h3>Hamza Malik</h3>
+                        <h6>Jhelum</h6>
+                        <p>Python Programmer and <br /> Back-end developer</p>
+                        <div class="buttons">
+                            <button class="primary" onclick="window.location.href='https://www.linkedin.com/in/hamzamalik22/'">LinkedIn</button>
+                        </div>
+                        <div class="skills">
+                            <h6>Skills</h6>
+                            <ul>
+                                <li>UI / UX</li>
+                                <li>Back End Development</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>Django</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="skills"
-                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
-                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
-                        <ul style="list-style-type: none; margin: 0; padding: 0;">
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                UI / UX</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Back End Development</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                HTML</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                CSS</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                JavaScript</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Python</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Django</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
 
+                <!-- 2 -->
+                <section class="developer">
+                    <div class="card-container">
+                        <span class="pro">PRO</span>
+                        <img class="round" src="{% static 'img/hamail.jpeg' %}" alt="user">
+                        <h3>Hamail Noor</h3>
+                        <h6>Rawalpindi</h6>
+                        <p>User interface designer and <br /> front-end developer</p>
+                        <div class="buttons">
+                            <button class="primary">LinkedIn</button>
+                        </div>
+                        <div class="skills">
+                            <h6>Skills</h6>
+                            <ul>
+                                <li>UI / UX</li>
+                                <li>Front End Development</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>Node</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3 -->
+                <section class="developer">
+                    <div class="card-container">
+                        <span class="pro">PRO</span>
+                        <img class="round" src="{% static 'img/aneeqa.jpeg' %}" alt="user">
+                        <h3>Aneeqa Batool</h3>
+                        <h6>Islamabad</h6>
+                        <p>User interface designer and <br /> front-end developer</p>
+                        <div class="buttons">
+                            <button class="primary">LinkedIn</button>
+                        </div>
+                        <div class="skills">
+                            <h6>Skills</h6>
+                            <ul>
+                                <li>UI / UX</li>
+                                <li>Front End Development</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>React</li>
+                                <li>Node</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
             </section>
-
-            <!-- 2 -->
-            <section class="developer">
-                <div class="card-container"
-                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
-                    <span class="pro"
-                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
-                    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"
-                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
-                    <h3 style="margin: 10px 0;">Hamail Noor</h3>
-                    <h6 style="margin: 5px 0; text-transform: uppercase;">Rawalpindi</h6>
-                    <p style="font-size: 14px; line-height: 21px;">User interface designer and <br /> front-end
-                        developer</p>
-                    <div class="buttons">
-                        <button class="primary"
-                            style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;">LinkedIn</button>
-                    </div>
-                    <div class="skills"
-                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
-                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
-                        <ul style="list-style-type: none; margin: 0; padding: 0;">
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                UI / UX</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Front End Development</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                HTML</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                CSS</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                JavaScript</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                React</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Node</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3 -->
-            <section class="developer">
-                <div class="card-container"
-                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
-                    <span class="pro"
-                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
-                    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"
-                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
-                    <h3 style="margin: 10px 0;">Aneeqa Batool</h3>
-                    <h6 style="margin: 5px 0; text-transform: uppercase;">Islamabad</h6>
-                    <p style="font-size: 14px; line-height: 21px;">User interface designer and <br /> front-end
-                        developer</p>
-                    <div class="buttons">
-                        <button class="primary"
-                            style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;">LinkedIn</button>
-                    </div>
-                    <div class="skills"
-                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
-                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
-                        <ul style="list-style-type: none; margin: 0; padding: 0;">
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                UI / UX</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Front End Development</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                HTML</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                CSS</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                JavaScript</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                React</li>
-                            <li
-                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
-                                Node</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-            </section>
-
-
-
-        </section>
-            
-
-
-
         </div>
     </section>
     <!-- Call to Action-->
@@ -404,7 +425,7 @@
                             class="icon-social-twitter"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                    <a class="social-link rounded-circle text-white" href="https://github.com/hamzamalik22/uett-assistant"><i class="icon-social-github"></i></a>
                 </li>
             </ul>
             <p class="text small mb-0">Copyright &copy; UET DOST 2024</p>
