@@ -50,7 +50,27 @@ def staff_panel(request):
     return render(request, 'staff/Dashboard.html', context)
 
 
-# Department update & Delete 
+# Department create, update & Delete 
+
+
+@login_required(login_url='staff_login')
+def depCreate(request):
+    form = DepForm()
+    
+    if request.method == 'POST':
+        form = DepForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('staff_panel')
+    
+    context = {'form': form}
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'staff/create.html', context)
+    else:
+        return render(request, 'staff/create.html', context)
+
+
 
 @login_required(login_url='staff_login')
 def depUpdate(request, pk):
@@ -82,7 +102,25 @@ def depDelete(request,pk):
 
     return render(request,"staff/delete.html",context)
 
-# Semester update & Delete 
+# Semester create, update & Delete 
+
+@login_required(login_url='staff_login')
+def semCreate(request):
+    form = SemForm()
+    
+    if request.method == 'POST':
+        form = SemForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('staff_panel')
+    
+    context = {'form': form}
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'staff/create.html', context)
+    else:
+        return render(request, 'staff/create.html', context)
+
 
 @login_required(login_url='staff_login')
 def semUpdate(request,pk):
@@ -113,7 +151,24 @@ def semDelete(request,pk):
     return render(request,"staff/delete.html",context)
 
 
-# Subject Update & Delete
+# Subject create, Update & Delete
+
+@login_required(login_url='staff_login')
+def subCreate(request):
+    form = SubForm()
+    
+    if request.method == 'POST':
+        form = SubForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('staff_panel')
+    
+    context = {'form': form}
+    
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'staff/create.html', context)
+    else:
+        return render(request, 'staff/create.html', context)
 
 
 @login_required(login_url='staff_login')

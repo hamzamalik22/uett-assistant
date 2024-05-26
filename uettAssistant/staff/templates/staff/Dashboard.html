@@ -67,7 +67,7 @@
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Departments</div>
         <div class="p-2 bd-highlight">
-          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+          <button type="button" class="btn btn-secondary"  onclick="window.location.href='{% url "dep_create" %}'">Create</button>
         </div>
       </div>
       
@@ -104,7 +104,7 @@
         <div class="d-flex bd-highlight mb-3">
           <div class="me-auto p-2 bd-highlight"><h2>Semester</div>
           <div class="p-2 bd-highlight">
-            <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url "sem_create" %}'">Create</button>
           </div>
         </div>
         
@@ -142,7 +142,7 @@
         <div class="d-flex bd-highlight mb-3">
           <div class="me-auto p-2 bd-highlight"><h2>Subjects</div>
           <div class="p-2 bd-highlight">
-            <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">Create</button>
+            <button type="button" class="btn btn-secondary" onclick="window.location.href='{% url "sub_create" %}'">Create</button>
           </div>
         </div>
         
