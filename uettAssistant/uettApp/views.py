@@ -9,10 +9,7 @@ def gpa(request):
     return render(request, 'uettApp/gpa.html', context)
 
 def home(request):
-    departments = Department.objects.all()
-    semesters = Semester.objects.all()  # Get all semesters
-    context = {'departments': departments, 'semesters': semesters,'title' : 'UETT GPA'}
-    return render(request, 'uettApp/home.html', context)
+    return render(request, 'uettApp/home.html')
 
 def calculator(request, department_id, semester_id):
     department = get_object_or_404(Department, id=department_id)
@@ -67,3 +64,7 @@ def calculator(request, department_id, semester_id):
 
     context = {'department': department, 'semester': semester, 'subjects': subjects, 'grade_form': grade_form,'title' : 'Calculate GPA'}
     return render(request, 'uettApp/calculator.html', context)
+
+
+def test(request):
+    return render(request, 'uettApp/test.html', )

@@ -1,15 +1,421 @@
-{% extends "uettApp/uett_base.html" %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" href="{% static 'img/uettaxila.png' %}">
+    <title>UET DOST</title>
+    <!-- Favicon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Simple line icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+        rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{% static 'styles/test.css' %}">
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <a class="menu-toggle rounded" href="#"><i class="ri-menu-5-line"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="{% url 'home' %}">UET DOST</a></li>
+            <li class="sidebar-nav-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="sidebar-nav-item"><a href="{% url 'gpa' %}">GPA Calculator</a></li>
+            <li class="sidebar-nav-item"><a href="{% url 'generate_pdf' %}">Title Page Generator</a></li>
+            <li class="sidebar-nav-item"><a href="#portfolio">Developers</a></li>
+        </ul>
+    </nav>
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">UET DOST</h1>
+            <h3 class="mb-5"><em>Welcome to UET Taxila Student Services!</em></h3>
+            <h6>
+                UET Taxila Dost! A Plateform that offers a reliable GPA calculator and a customizable title page
+                generator, designed to simplify your academic tasks and ensure compliance with university standards.
+                Enhance your academic experience today!
+            </h6>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="content-section bg-light" id="about">
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Easily calculate your Grade Point Average (GPA) with our intuitive GPA calculator.</h2>
+                    <p class="lead mb-5">
+                        Simply input your grades and credit hours to get an accurate calculation of your semester and
+                        cumulative GPA.
+                    </p>
+                    <a class="btn btn-dark btn-xl" href="{% url 'gpa' %}">GPA CALCULATOR</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr style='opacity: 0;'>
+
+    <section class="content-section bg-light" id="about">
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Generate professional, university-compliant title pages for your reports and projects.</h2>
+                    <p class="lead mb-5">
+                        Customize your title page with course details, project titles, and personal information to meet
+                        UET Taxila's formatting standards.
+                    </p>
+                    <a class="btn btn-dark btn-xl" href="{% url 'generate_pdf' %}">Title Page Generator</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-{% block content %}
+    <!-- Services-->
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="ri-cpu-line"></i></span>
+                    <h4><strong>GPA Calculator
+                        </strong></h4>
+                    <p class="text-faded mb-0">Easily calculate your semester and cumulative GPA.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                    <h4><strong>Title Page Generator</strong></h4>
+                    <p class="text-faded mb-0">Create professional, UET Taxila-compliant title pages effortlessly..</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="ri-heart-2-fill"></i> </span>
+                    <h4><strong>User-Friendly</strong></h4>
+                    <p class="text-faded mb-0">
+                        Designed to be intuitive and easy to use for all students.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
+                    <h4><strong>Accurate</strong></h4>
+                    <p class="text-faded mb-0">Ensure precise calculations and formatted title pages every time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Callout-->
+    <br>
+    <br>
+    <div class="container px-4 px-lg-5 text-center">
+        <div class="content-section-heading">
+            <!-- <h3 class="text-secondary mb-0">Services</h3> -->
+            <h2 class="mb-5">Frequently Asked Questions</h2>
+        </div>
+    </div>
+    <section>
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How do I use the GPA Calculator?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            To use the GPA calculator, input your course grades and corresponding credit hours into the
+                            designated fields. The calculator will then compute both your semester GPA and cumulative
+                            GPA, providing you with an accurate assessment of your academic performance.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What information do I need to generate a title page?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            For generating a title page, you need to provide specific details such as your course name,
+                            project title, your name, instructor's name, and submission date. Our tool will format this
+                            information according to UET Taxila's guidelines to create a professional and compliant
+                            title page for your assignments.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Is the website accessible on mobile devices?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Yes, our website is designed to be fully responsive. This means it functions seamlessly on
+                            any device, including computers, tablets, and smartphones, ensuring that you can access our
+                            tools and services anytime, anywhere.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Are the tools provided by the website free to use?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Absolutely! All the tools and services on our website, including the GPA calculator and
+                            title page generator, are completely free for UET Taxila students. Our aim is to support
+                            your academic journey by providing you with reliable and accessible resources at no cost.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How accurate are the GPA calculations and title pages generated by the website?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Our GPA calculator uses the standard UET Taxila grading scale to ensure precise calculations
+                            of your GPA. The title page generator adheres to the formatting guidelines specified by UET
+                            Taxila, guaranteeing that your title pages are correctly formatted and professional. We
+                            continuously update our tools to maintain accuracy and compliance with university standards.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio-->
+    <section class="content-section" id="portfolio">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h2 class="mb-5">Developers</h2>
+            </div>
 
-{% include "uettApp/uett_landing.html" %}
+            
+        <section class="developers" style="display: flex;gap: 20px;">
+            <!-- 1 -->
+            <section class="developer">
+                <div class="card-container"
+                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
+                    <span class="pro"
+                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
+                    <img class="round" width="145px" src="{% static 'img/hamza.jpg' %}" alt="user"
+                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
+                    <h3 style="margin: 10px 0;">Hamza Malik</h3>
+                    <h6 style="margin: 5px 0; text-transform: uppercase;">Jhelum</h6>
+                    <p style="font-size: 14px; line-height: 21px;">Python Programmer and <br /> Back-end
+                        developer</p>
+                    <div class="buttons">
+                        <button class="primary" 
+                        style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;" 
+                        onclick="window.location.href='https://www.linkedin.com/in/hamzamalik22/' ">
+                        LinkedIn
+                    </button>
+                    </div>
+                    <div class="skills"
+                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
+                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
+                        <ul style="list-style-type: none; margin: 0; padding: 0;">
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                UI / UX</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Back End Development</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                HTML</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                CSS</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                JavaScript</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Python</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Django</li>
+                        </ul>
+                    </div>
+                </div>
 
 
-{% include "uettApp/uett_faq.html" %}
+            </section>
+
+            <!-- 2 -->
+            <section class="developer">
+                <div class="card-container"
+                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
+                    <span class="pro"
+                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
+                    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"
+                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
+                    <h3 style="margin: 10px 0;">Hamail Noor</h3>
+                    <h6 style="margin: 5px 0; text-transform: uppercase;">Rawalpindi</h6>
+                    <p style="font-size: 14px; line-height: 21px;">User interface designer and <br /> front-end
+                        developer</p>
+                    <div class="buttons">
+                        <button class="primary"
+                            style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;">LinkedIn</button>
+                    </div>
+                    <div class="skills"
+                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
+                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
+                        <ul style="list-style-type: none; margin: 0; padding: 0;">
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                UI / UX</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Front End Development</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                HTML</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                CSS</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                JavaScript</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                React</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Node</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3 -->
+            <section class="developer">
+                <div class="card-container"
+                    style="background-color: #231E39; border-radius: 5px; box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75); color: #B3B8CD; padding-top: 30px; position: relative; width: 350px; max-width: 100%; text-align: center;">
+                    <span class="pro"
+                        style="color: #231E39; background-color: #FEBB0B; border-radius: 3px; font-size: 14px; font-weight: bold; padding: 3px 7px; position: absolute; top: 30px; left: 30px;">PRO</span>
+                    <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user"
+                        style="border: 1px solid #03BFCB; border-radius: 50%; padding: 7px;">
+                    <h3 style="margin: 10px 0;">Aneeqa Batool</h3>
+                    <h6 style="margin: 5px 0; text-transform: uppercase;">Islamabad</h6>
+                    <p style="font-size: 14px; line-height: 21px;">User interface designer and <br /> front-end
+                        developer</p>
+                    <div class="buttons">
+                        <button class="primary"
+                            style="background-color: #03BFCB; border: 1px solid #03BFCB; border-radius: 3px; color: #231E39; font-family: Montserrat, sans-serif; font-weight: 500; padding: 10px 25px;">LinkedIn</button>
+                    </div>
+                    <div class="skills"
+                        style="background-color: #1F1A36; text-align: left; padding: 15px; margin-top: 30px;">
+                        <h6 style="margin: 0 0 10px 0; text-transform: uppercase;">Skills</h6>
+                        <ul style="list-style-type: none; margin: 0; padding: 0;">
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                UI / UX</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Front End Development</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                HTML</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                CSS</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                JavaScript</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                React</li>
+                            <li
+                                style="border: 1px solid #2D2747; border-radius: 2px; display: inline-block; font-size: 12px; margin: 0 7px 7px 0; padding: 7px;">
+                                Node</li>
+                        </ul>
+                    </div>
+                </div>
 
 
-{% include "uettApp/uett_footer.html" %}
+            </section>
 
-{% endblock content %}
+
+
+        </section>
+            
+
+
+
+        </div>
+    </section>
+    <!-- Call to Action-->
+    <section class="content-section bg-primary text-white">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+            <a class="btn btn-xl btn-light me-4" href="{% url 'gpa' %}">GPA CALCULATOR</a>
+            <a class="btn btn-xl btn-dark" href="{% url 'generate_pdf' %}">TITLE PAGE GEN..</a>
+        </div>
+    </section>
+    <!-- Map-->
+    <div class="map" id="contact">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.773506768368!2d72.82065797402387!3d33.76651823276628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfa436e082015d%3A0xf729c78e5ac28d57!2sUniversity%20of%20Engineering%20and%20Technology%20(UET)%2C%20Taxila!5e0!3m2!1sen!2s!4v1716729990836!5m2!1sen!2s"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i
+                            class="icon-social-facebook"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i
+                            class="icon-social-twitter"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                </li>
+            </ul>
+            <p class="text small mb-0">Copyright &copy; UET DOST 2024</p>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/test.js' %}"></script>
+</body>
+
+</html>
