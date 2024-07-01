@@ -10,12 +10,17 @@ class DepartmentSerializers(serializers.ModelSerializer):
 
 
 class SubjectSerializers(serializers.ModelSerializer):
+    department = DepartmentSerializers(many=False)
+
     class Meta:
         model = Subject
         fields = "__all__"
 
 
 class SemesterSerializers(serializers.ModelSerializer):
+    department = DepartmentSerializers(many=False)
+    subjects = SubjectSerializers(many=True)
+
     class Meta:
         model = Semester
         fields = "__all__"
