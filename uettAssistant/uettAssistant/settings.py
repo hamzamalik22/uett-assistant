@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'uettApp.apps.UettappConfig',
     'titlepage.apps.TitlepageConfig',
     'staff.apps.StaffConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

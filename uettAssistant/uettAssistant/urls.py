@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('uettApp.urls')),
     path('', include('titlepage.urls')),
     path('', include('staff.urls')),
+    path('api/', include('api.urls')),
 ]
