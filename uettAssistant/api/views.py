@@ -1,12 +1,15 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from uettApp.models import *
 from titlepage.models import *
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework import status
 
+
 # Create your views here.
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getRoutes(request, format=None):
     routes = [
         {"GET": "/api/departments"},
@@ -20,14 +23,23 @@ def getRoutes(request, format=None):
     return Response({"Routes": routes})
 
 
-@api_view(["GET"])
-def getDepartments(request, format=None):
-    deps = Department.objects.all()
-    serializer = DepartmentSerializers(deps, many=True)
-    return Response({"Departments": serializer.data})
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def theDepartments(request, pk, format=None):
+    if request.method == "GET":
+        deps = Department.objects.all()
+        serializer = DepartmentSerializers(deps, many=True)
+        return Response({"Departments": serializer.data})
+    elif request.method == 'POST':
+        dep = Department.objects.get(id = pk)
+        data = request.data
+        print("DATA :",data)
+        serializer = DepartmentSerializers(dep, many=False)
+        return Response(serializer.data)
 
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getDepartment(request, pk, format=None):
     dep = Department.objects.get(id=pk)
     serializer = DepartmentSerializers(dep, many=False)
@@ -35,6 +47,7 @@ def getDepartment(request, pk, format=None):
 
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getSubjects(request, format=None):
     subs = Subject.objects.all()
     serializer = SubjectSerializers(subs, many=True)
@@ -42,6 +55,7 @@ def getSubjects(request, format=None):
 
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getSubject(request, pk, format=None):
     sub = Subject.objects.get(id=pk)
     serializer = SubjectSerializers(sub, many=False)
@@ -49,6 +63,7 @@ def getSubject(request, pk, format=None):
 
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getSemesters(request, format=None):
     sems = Semester.objects.all()
     serializer = SemesterSerializers(sems, many=True)
@@ -56,6 +71,7 @@ def getSemesters(request, format=None):
 
 
 @api_view(["GET"])
+@permission_classes([IsAuthenticated])
 def getSemester(request, pk, format=None):
     sem = Semester.objects.get(id=pk)
     serializer = SemesterSerializers(sem, many=False)
@@ -63,6 +79,7 @@ def getSemester(request, pk, format=None):
 
 
 @api_view(["POST"])
+@permission_classes([IsAuthenticated])
 def setTitlePage(request, format=None):
     titlePage = TitlePage.objects.all()
     serializer = TitlePageSerializers(titlePage, many=True)

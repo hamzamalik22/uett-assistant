@@ -14,7 +14,7 @@ urlpatterns = [
     
     
     path("", views.getRoutes, name="routes"),
-    path("departments/", views.getDepartments, name="departments"),
+    path("departments/", views.theDepartments, name="departments"),
     path("departments/<str:pk>/", views.getDepartment, name="department"),
     path("subjects/", views.getSubjects, name="subjects"),
     path("subjects/<str:pk>/", views.getSubject, name="subject"),
