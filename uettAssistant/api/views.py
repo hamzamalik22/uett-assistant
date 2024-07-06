@@ -9,7 +9,7 @@ from rest_framework import status
 
 # Create your views here.
 @api_view(["GET"])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def getRoutes(request, format=None):
     routes = [
         {"GET": "/api/departments"},
@@ -25,25 +25,39 @@ def getRoutes(request, format=None):
 
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
-def theDepartments(request, pk, format=None):
+def theDepartments(request, format=None):
     if request.method == "GET":
         deps = Department.objects.all()
         serializer = DepartmentSerializers(deps, many=True)
         return Response({"Departments": serializer.data})
-    elif request.method == 'POST':
-        dep = Department.objects.get(id = pk)
-        data = request.data
-        print("DATA :",data)
-        serializer = DepartmentSerializers(dep, many=False)
-        return Response(serializer.data)
+    elif request.method == "POST":
+        serializer = DepartmentSerializers(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(["GET"])
+@api_view(["GET", "PUT", "POST", "DELETE"])
 @permission_classes([IsAuthenticated])
-def getDepartment(request, pk, format=None):
-    dep = Department.objects.get(id=pk)
-    serializer = DepartmentSerializers(dep, many=False)
-    return Response({"Department": serializer.data})
+def departmentDetails(request, pk, format=None):
+    try:
+        dep = Department.objects.get(id=pk)
+    except Department.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == "GET":
+        serializer = DepartmentSerializers(dep, many=False)
+        return Response({"Department": serializer.data})
+    elif request.method == "PUT":
+        serializer = DepartmentSerializers(dep, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == "DELETE":
+        dep.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(["GET"])

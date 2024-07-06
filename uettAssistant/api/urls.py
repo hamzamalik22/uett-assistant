@@ -15,7 +15,7 @@ urlpatterns = [
     
     path("", views.getRoutes, name="routes"),
     path("departments/", views.theDepartments, name="departments"),
-    path("departments/<str:pk>/", views.getDepartment, name="department"),
+    path("departments/<str:pk>/", views.departmentDetails, name="department"),
     path("subjects/", views.getSubjects, name="subjects"),
     path("subjects/<str:pk>/", views.getSubject, name="subject"),
     path("semesters/", views.getSemesters, name="semesters"),
